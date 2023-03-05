@@ -1,0 +1,30 @@
+
+<%= form_with model: @task do |form| %>
+	<div>
+		<%= form.label :date %><br>
+		<%= form.date_select :date %>
+		<% task.errors.full_messages_for(:date).each do |message| %>
+			<div> <%= message %> </div>
+		<% end %>
+	</div>
+	
+	<div>
+		<%= form.label :task %><br>
+		<%= form.text_area :task %>
+		<% task.errors.full_messages_for(:task).each do |message| %>
+			<div> <%= message %> </div>
+		<% end %>
+	</div>
+	
+	<div>
+		<%= form.label :status %><br>
+		<%= form.check_box :status %>
+		<% task.errors.full_messages_for(:status).each do |message| %>
+			<div> <%= message %> </div>
+		<% end %>
+	</div>
+	
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>

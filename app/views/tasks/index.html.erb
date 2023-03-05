@@ -1,0 +1,40 @@
+<h1>Welcome back!</h1>
+
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+
+</style>
+</head>
+
+<table>
+	<caption><b> To Do List </b></caption>
+		<th>Date</th>
+		<th>Task</th>
+		<th>Status</th>
+		
+		<% @tasks.each do |task| %>
+			<tr>
+				<td>
+					<%= task.date %>
+				</td>
+				
+				<td>
+					<%= task.task %>
+				</td>
+				
+				<td>
+					<%= task.status %>
+				</td>
+				
+				<td>
+					<%= link_to '<button type="button">Edit/Delete</button>'.html_safe, task %>
+				</td>
+			</tr>
+		<% end %>
+</table>
+
+<%= link_to '<button type="button">New Task</button>'.html_safe, new_task_path %>
+

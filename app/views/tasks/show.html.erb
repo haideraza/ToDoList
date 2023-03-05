@@ -1,0 +1,19 @@
+
+<h1> Task details </h1>
+
+<h4> Task </h4>
+<p><%= @task.task %><p>
+
+<h4> Status </h4>
+<p><%= @task.status %></p>
+
+
+
+
+
+<ul>
+	<%= link_to '<button type="button">Edit</button>'.html_safe, edit_task_path(@task) %>
+	
+	<%= link_to '<button type="button">Delete</button>'.html_safe, task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
+</ul>
